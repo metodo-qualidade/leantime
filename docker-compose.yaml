@@ -3,8 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "8080:80"
     environment:
       - 'LEAN_APP_URL=${SERVICE_URL_LEANTIME:-http://localhost:8080}'
       - LEAN_DB_HOST=mysql
@@ -70,3 +68,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 3
+volumes:
+  public-userfiles:
+  userfiles:
+  plugins:
+  leantime_mysql_data:
+  leantime_redis_data:
